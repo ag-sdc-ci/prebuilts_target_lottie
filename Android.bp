@@ -1,0 +1,56 @@
+// Auto-generated prebuilt Blueprint for prebuilts_target_lottie
+// Staged from Extractive APEX package: ext-lottie (org.blisslabs.ag.ext.lottie)
+
+package {
+    default_applicable_licenses: ["external_lottie_license"],
+}
+
+license {
+    name: "external_lottie_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+    ],
+    license_text: [
+        "LICENSE",
+    ],
+}
+
+license {
+    name: "external_lottie_code_of_conduct_license",
+    visibility: ["//visibility:private"],
+    license_kinds: [
+        "SPDX-license-identifier-CC-BY-SA",
+    ],
+    license_text: [
+        "LICENSE-CC-BY-SA",
+    ],
+}
+
+android_library_import {
+    name: "lottie",
+    aars: ["share/lottie/lottie-5.2.0.aar"],
+    sdk_version: "31",
+    min_sdk_version: "19",
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.permission",
+    ],
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "okio-lib",
+    ],
+}
+
+android_library_import {
+    name: "lottie_compose",
+    aars: ["share/lottie/lottie-compose-5.2.0.aar"],
+    sdk_version: "current",
+    min_sdk_version: "21",
+    static_libs: [
+        "lottie",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.ui_ui",
+    ],
+}
